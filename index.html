@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CP Tracker</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ======================
+         SIDEBAR
+    ======================= -->
+
+    <div class="sidebar">
+
+        <h2>CP Tracker</h2>
+
+        <ul>
+
+            <li class="active">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Dashboard</span>
+
+            </li>
+
+
+            <li>
+
+                <i class="fa-solid fa-code"></i>
+
+                <span>Problems</span>
+
+            </li>
+
+
+            <li>
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                <span>Topics</span>
+
+            </li>
+
+
+            <li>
+
+                <i class="fa-solid fa-calendar"></i>
+
+                <span>Contests</span>
+
+            </li>
+
+
+            <li>
+
+                <i class="fa-solid fa-book"></i>
+
+                <span>Notes</span>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- ======================
+         MAIN SECTION
+    ======================= -->
+
+    <div class="main">
+
+        <!-- ======================
+             NAVBAR
+        ======================= -->
+
+        <div class="navbar">
+
+            <h1>Dashboard</h1>
+
+            <button id="themeToggle">
+
+                🌙 Dark Mode
+
+            </button>
+
+        </div>
+
+        <!-- ======================
+             DASHBOARD CARDS
+        ======================= -->
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Total Solved</h3>
+
+                <p id="totalSolved">0</p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>Easy Problems</h3>
+
+                <p id="easyCount">0</p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>Medium Problems</h3>
+
+                <p id="mediumCount">0</p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>Hard Problems</h3>
+
+                <p id="hardCount">0</p>
+
+            </div>
+
+        </div>
+
+        <!-- ======================
+             ADD PROBLEM SECTION
+        ======================= -->
+
+        <div class="problem-form">
+
+            <h2>Add Problem</h2>
+
+            <!-- Problem Name -->
+
+            <input type="text"
+                   id="problemName"
+                   placeholder="Problem Name">
+
+            <!-- Difficulty -->
+
+            <select id="difficulty">
+
+                <option value="">
+                    Select Difficulty
+                </option>
+
+                <option value="Easy">
+                    Easy
+                </option>
+
+                <option value="Medium">
+                    Medium
+                </option>
+
+                <option value="Hard">
+                    Hard
+                </option>
+
+            </select>
+
+            <!-- Topics -->
+
+            <select id="topic">
+
+                <option value="">
+                    Select Topic
+                </option>
+
+                <option value="Array">
+                    Array
+                </option>
+
+                <option value="String">
+                    String
+                </option>
+
+                <option value="Linked List">
+                    Linked List
+                </option>
+
+                <option value="Stack">
+                    Stack
+                </option>
+
+                <option value="Queue">
+                    Queue
+                </option>
+
+                <option value="Tree">
+                    Tree
+                </option>
+
+                <option value="BST">
+                    BST
+                </option>
+
+                <option value="Heap">
+                    Heap
+                </option>
+
+                <option value="Graph">
+                    Graph
+                </option>
+
+                <option value="Trie">
+                    Trie
+                </option>
+
+                <option value="Dynamic Programming">
+                    Dynamic Programming
+                </option>
+
+                <option value="Greedy">
+                    Greedy
+                </option>
+
+                <option value="Recursion">
+                    Recursion
+                </option>
+
+                <option value="Backtracking">
+                    Backtracking
+                </option>
+
+                <option value="Binary Search">
+                    Binary Search
+                </option>
+
+                <option value="Sliding Window">
+                    Sliding Window
+                </option>
+
+                <option value="Two Pointer">
+                    Two Pointer
+                </option>
+
+                <option value="Bit Manipulation">
+                    Bit Manipulation
+                </option>
+
+            </select>
+
+            <!-- Button -->
+
+            <button id="addBtn">
+
+                Add Problem
+
+            </button>
+
+        </div>
+
+        <!-- ======================
+             SEARCH BOX
+        ======================= -->
+
+        <div class="search-box">
+
+            <input type="text"
+                   id="searchInput"
+                   placeholder="Search Problems...">
+
+        </div>
+
+        <!-- ======================
+             FILTER TOPIC
+        ======================= -->
+
+        <select id="filterTopic">
+
+            <option value="All">
+                All Topics
+            </option>
+
+            <option value="Array">
+                Array
+            </option>
+
+            <option value="String">
+                String
+            </option>
+
+            <option value="Linked List">
+                Linked List
+            </option>
+
+            <option value="Stack">
+                Stack
+            </option>
+
+            <option value="Queue">
+                Queue
+            </option>
+
+            <option value="Tree">
+                Tree
+            </option>
+
+            <option value="BST">
+                BST
+            </option>
+
+            <option value="Heap">
+                Heap
+            </option>
+
+            <option value="Graph">
+                Graph
+            </option>
+
+            <option value="Trie">
+                Trie
+            </option>
+
+            <option value="Dynamic Programming">
+                Dynamic Programming
+            </option>
+
+            <option value="Greedy">
+                Greedy
+            </option>
+
+        </select>
+
+        <!-- ======================
+             PROBLEM LIST
+        ======================= -->
+
+        <div class="problem-list">
+
+            <h2>Solved Problems</h2>
+
+            <div id="problemsContainer">
+
+            </div>
+
+        </div>
+
+        <!-- ======================
+             CHARTS
+        ======================= -->
+
+        <div class="charts">
+
+            <div class="chart-card">
+
+                <canvas id="difficultyChart"></canvas>
+
+            </div>
+
+            <div class="chart-card">
+
+                <canvas id="topicChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ======================
+         JS FILE
+    ======================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
